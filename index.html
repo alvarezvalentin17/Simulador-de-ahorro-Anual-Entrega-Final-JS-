@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js" integrity="sha512-Lii3WMtgA0C0qmmkdCpsG0Gjr6M0ajRyQRQSbTF6BsrVh/nhZdHpVZ76iMIPvQwz1eoXC3DmAg9K51qT5/dEVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <title>Simulador de ahorro</title>
+</head>
+<body>
+        <main>
+            <p id="local"></p>
+        
+        <section class="card">
+            
+            <h1 class="title">Simulador de ahorro</h1>
+            <p>Este simulador le permitira saber cuanto debe ahorrar al año para alcanzar sus metas.</p>
+            <p>Por favor indique el monto que desea ahorrar y su sueldo mensual en el espacio en blanco.</p>
+            <p class="note">Nota: El monto a ahorrar debe ser como minimo $ 1000</p>
+
+            <form>
+                <input type="number" name="" id="sueldo" class="inp" placeholder="Ingrese su sueldo" onchange="xp()">
+                <input type="number" id="ahorro" class="inp" placeholder="Ingrese su ahorro" onchange="xp()"> 
+                <input class="reset" type="reset" value="Limpiar formulario">   
+            </form>
+            
+            <button class="boton" onclick="pesos()">Calcular en pesos</button>
+            <button class="boton" onclick="dolares()">Calcular en dolares</button>
+            <button class="boton" onclick="mostrarGrafico()">Mostrar grafico</button>
+            <button id="reload" class="boton">Refresar datos del aplicativo</button>
+
+        </section>
+
+        <section>
+            <h2>Resultado</h2>
+            <p id="input"></p>
+        </section>
+
+        <canvas class="graph" id="myChart"></canvas>
+
+        <section>
+            <h5 class="text-center">Si usted tiene algun problema con el aplicativo puede contactarse con los siguientes administradores de la pagina.</h5>
+
+            <div class="container mt-4 shadow-lg p3 mb-5 bg-body rounded">
+                <table class="table table-boardered table-striped">
+                    <thead>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                    </thead>
+        
+                    <tbody id="data">
+        
+                    </tbody>
+                </table>
+            </div>
+        </section>
+               </main>
+    <script src="./app.js"></script>
+</body>
+</html>
